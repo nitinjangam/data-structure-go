@@ -1,7 +1,6 @@
 package linkedlists
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/nitinjangam/data-structure-go/stacks"
@@ -35,19 +34,19 @@ func (n *Node) ReverseList() {
 		s.Push(n)
 		n = n.Next
 	}
-	fmt.Println("Stack:", s)
+	//fmt.Println("Stack:", s)
 	lsts := []*Node{}
 	for s.IsEmpty() != true {
 		p := s.Pop()
 		lsts = append(lsts, p.(*Node))
 	}
-	fmt.Println("List:", lsts)
+	//fmt.Println("List:", lsts)
 	for i := 0; i < len(lsts)-1; i++ {
-		fmt.Println(lsts[i])
 		lsts[i].Next = lsts[i+1]
+		//fmt.Println(lsts[i], lsts[i].Next)
 	}
-	fmt.Println("List:", lsts)
-	lsts[len(lsts)-1].Next = &Node{}
+	//fmt.Println("List:", lsts)
+	lsts[len(lsts)-1].Next = nil
 }
 
 // func main() {

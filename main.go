@@ -27,14 +27,15 @@ func main() {
 	l2.Next = &l3
 	l3.Next = &l4
 	//l4.Next = &l
-	fmt.Println(l.Next.Val)
-	fmt.Println(l1.Next.Val)
-	fmt.Println(l2.Next.Val)
-	fmt.Println(l3.Next.Val)
+	nod := &l
+	for nod != nil {
+		fmt.Println(nod)
+		nod = nod.Next
+	}
 	l.ReverseList()
-	fmt.Println(l.Next)
-	fmt.Println(l1.Next.Val)
-	fmt.Println(l2.Next.Val)
-	fmt.Println(l3.Next.Val)
-	fmt.Println(l4.Next.Val)
+	nod1 := &l4
+	for nod1 != nil {
+		fmt.Println(nod1)
+		nod1 = nod1.Next
+	}
 }
